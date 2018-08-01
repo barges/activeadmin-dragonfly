@@ -6,6 +6,8 @@ Sorry, but I no longer work on ActiveAdmin often enough to justify mantaining th
 
 ### Gemfile
 
+**As from version 0.1.0 this gem is only compatible with Dragonfly ~> 1.0.0. For older Dragonfly installations use version 0.0.2 of this gem.**
+
 ```ruby
 gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
 ```
@@ -14,8 +16,7 @@ gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
 
 ```ruby
 class BlogPost < ActiveRecord::Base
-  attr_accessible :image, :retained_image, :remove_image
-  image_accessor :image
+  dragonfly_accessor :image
 end
 ```
 
@@ -23,6 +24,8 @@ end
 
 ```ruby
 ActiveAdmin.register BlogPost do
+  permit_params :image, :retained_image, :remove_image
+
   form do |f|
     # ...
     f.input :image, as: :dragonfly

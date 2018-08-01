@@ -1,0 +1,51 @@
+@import "bourbon";
+
+.input.dragonfly {
+  .fragments {
+    ol {
+      li {
+        @include clearfix;
+
+        &.component-preview,
+        &.component-upload {
+          label {
+            display: none;
+          }
+        }
+
+        &.component-preview {
+          & > a {
+            float: left;
+            display: block;
+            padding: 5px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+
+            img {
+              display: block;
+            }
+          }
+        }
+
+        &.component-remove {
+          label {
+            width: auto;
+            float: none;
+            text-align: left;
+          }
+        }
+
+        + li {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .component-preview {
+    .no-image {
+      line-height: 32px;
+    }
+  }
+}

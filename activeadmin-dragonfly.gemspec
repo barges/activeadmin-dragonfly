@@ -7,17 +7,17 @@ require "active_admin/dragonfly/version"
 Gem::Specification.new do |s|
   s.name        = "activeadmin-dragonfly"
   s.version     = ActiveAdmin::Dragonfly::VERSION
-  s.authors     = ["Stefano Verna"]
-  s.email       = ["stefano.verna@gmail.com"]
-  s.homepage    = "http://github.com/cantierecreativo/activeadmin-dragonfly"
+  s.licenses    = ['MIT']
+  s.authors     = ["Björn Wolf"]
+  s.email       = ["bjoern@dreimannzelt.de"]
+  s.homepage    = "http://github.com/dreimannzelt/activeadmin-dragonfly"
   s.summary     = "Adds a new :dragonfly field type to ActiveAdmin"
-  s.description = "Adds a new :dragonfly field type to ActiveAdmin"
+  s.description = "For convenient use of dragonfly attachments within ActiveAdmin, this gem adds a new input type and some stuff for retaining and removing."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile", "README.md"]
 
-  s.add_dependency "activeadmin"
+  s.add_runtime_dependency "activeadmin", "> 0.99"
   s.add_dependency "bourbon"
-  s.add_dependency "dragonfly", "0.9.15"
-  s.add_dependency "rack-cache"
+  s.add_runtime_dependency "dragonfly", "~> 1.0"
 end
 
